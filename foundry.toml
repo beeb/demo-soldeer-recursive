@@ -1,6 +1,18 @@
 [profile.default]
 src = "src"
 out = "out"
-libs = ["lib"]
+evm_version = "cancun"
+libs = ["dependencies"]
+remappings = [
+    "forge-std/=dependencies/forge-std-1.9.2/",
+    "v4-periphery/=dependencies/v4-periphery-0.1.0/",
+]
 
-# See more config options https://github.com/foundry-rs/foundry/blob/master/crates/config/README.md#all-options
+[soldeer]
+recursive_deps = true
+remappings_location = "config"
+remappings_version = false
+
+[dependencies]
+forge-std = "1.9.2"
+v4-periphery = { version = "0.1.0", git = "https://github.com/Uniswap/v4-periphery.git", rev = "5d7fde210eb5f1d6138bf2ee7d2d861d066c641f" }
