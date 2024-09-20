@@ -25,6 +25,10 @@ jobs:
         with:
           version: nightly
 
+      - name: Install deps
+        run: |
+          forge soldeer install
+
       - name: Show Forge version
         run: |
           forge --version
